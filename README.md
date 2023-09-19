@@ -16,7 +16,7 @@ Vodafone Data Science Hackathon 2021</h1>
 Our team (Elia Torre, Edoardo Botta & Marco Antonioli) outperformed 40 competing teams in the **Vodafone Data Science Hackathon 2021** exploiting a Temporal-Convolutional Neural Network. Here below, a figure describing our architecture. 
 
 <div align="center">
-<img src="figures/NN.png" alt="Temporal Convolutional Neural Network" width="40%">
+<img src="figures/NN.png" alt="Temporal Convolutional Neural Network" width="50%">
 </div>
 
 ## Dataset & Pre-Processing
