@@ -12,6 +12,9 @@ Vodafone Data Science Hackathon 2021</h1>
 
 <hr/>
 
+## 🚀 Winning Team of Vodafone Data Science Hackathon 2021 
+Our team (composed of Elia Torre, Edoardo Botta & Marco Antonioli) outperformed 40 competing teams in the **Vodafone Data Science Hackathon 2021** exploiting a Temporal-Convolutional Neural Network. 
+
 ## Dataset & Pre-Processing
 The dataset presents the events leading to the interaction with Tobi. Each row in the dataframe describes one such event through:
 1. Session Identifier
