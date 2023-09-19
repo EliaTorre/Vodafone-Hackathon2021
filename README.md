@@ -12,4 +12,26 @@ Vodafone Data Science Hackathon 2021</h1>
 
 <hr/>
 
-## Introduction
+## Dataset & Pre-Processing
+The dataset presents the events leading to the interaction with Tobi. Each row in the dataframe describes one such event through:
+1. Session Identifier
+2. Customer Identifier
+3. Event Timestamp
+4. Event Descriptor (Up to 4 Hierarchical Properties)
+5. Tobi Session Timestamp
+6. Tobi Session Label
+
+The Pandas Timestamps were not exploitable as such. So, we re-formatted them to achieve a positive-series of time identifiers starting from a prior baseline date. Each event presents an hierarchical categorization "X_Y" with X as the category (1 to 4), while Y provides a deeper characterization of the events. We decided to drop this notation in favor of an implicit characterization of X associated with the column label. However, we preserved Y in explicit form. We addressed missing events in the dataset (indicated with "None") converting them to -1. The rationale behind this choice is that -1 is not a significant value among those of the columns and hence it does not mislead the training of our model.
+
+After the process of data cleaning, we deeper thought about the relations among the variables. We decided to perform a reshaping on the dataset. The rationale is that we interpreted the sessions as sequences of events. Indeed, we decided to give the dataframe a three dimensional structure. The three matrix-dimensions:
+1. Number of Sessions
+2. Maximum Number of Events in a Session
+3. Features of the Events
+
+We proceeded in splitting the dataframe in training, test and validation samples. In addition, we scaled the features, in order to achieve a zero mean distribution with unit variance. This structure is then given to the neural network as a first input.
+
+<hr/>
+
+## Model & Training
+
+
