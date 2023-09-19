@@ -36,7 +36,7 @@ We proceeded in splitting the dataframe in training, test and validation samples
 Since we interpreted the sessions as sequences of events, we decided to use a **Temporal Convolutional Network (TCN)**, in order to extract time dependencies. We decided to adopt a kernel size of 3 and 128 filters, moreover we applied exponential growing dilation rate. In this structure the number of layers is equal to:
 
 <div align="center">
-<img src="figures/math.png" alt="Layers Equation" width="40%">
+<img src="figures/math.png" alt="Layers Equation" width="30%">
 </div>
 
 Information from 3-D input are captured by four convolutional layers and the output of this convolutional block is then flattened to obtaine a vector representing the unique sessions. This vector is then concatenated with a second input composed by the frequencies of each label in users’ past interactions as an history log. The concatenated vector is passed as input in a sequence of three fully connected layers, with the last one being a four neurons output layer with "softmax" activation. In order to improve training performances and avoid eventual overfitting we applied *Weight-normalization* to every convolutional layer and *dropout* to both convolutional and fully connected layers. Moreover, an important remark about the training process is that, when building the input structure we made sure that no information about the label of the session currently being passed was used as a feature. Indeed, the current session is never already part of the user history.
